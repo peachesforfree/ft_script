@@ -35,11 +35,16 @@ char **lex[5] = {
 
 typedef struct          s_env
 {
-    char                *pipe;
+    char                pipe[500];
     int                 time;
     char                *file;
+    int                 filepathfd;
     unsigned char       flags;
 }                       t_env;
 
+
+void    print_flags(t_env *env);    //for testing
+char    get_flags(int count, char **input, t_env *env);
+void    initial_errors(char *str);
 
 #endif
